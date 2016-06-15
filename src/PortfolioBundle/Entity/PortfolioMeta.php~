@@ -1,0 +1,112 @@
+<?php
+
+namespace PortfolioBundle\Entity;
+
+/**
+ * PortfolioMeta
+ */
+class PortfolioMeta
+{
+    /**
+     * @var integer
+     */
+    private $id;
+
+    /**
+     * @var string
+     */
+    private $keyField;
+
+    /**
+     * @var string
+     */
+    private $valField;
+
+    /**
+     * @var \PortfolioBundle\Entity\Portfolio
+     */
+    private $portfolio;
+
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set keyField
+     *
+     * @param string $keyField
+     *
+     * @return PortfolioMeta
+     */
+    public function setKeyField($keyField)
+    {
+        $this->keyField = $keyField;
+
+        return $this;
+    }
+
+    /**
+     * Get keyField
+     *
+     * @return string
+     */
+    public function getKeyField()
+    {
+        return $this->keyField;
+    }
+
+    /**
+     * Set valField
+     *
+     * @param string $valField
+     *
+     * @return PortfolioMeta
+     */
+    public function setValField($valField)
+    {
+        $this->valField = $valField;
+
+        return $this;
+    }
+
+    /**
+     * Get valField
+     *
+     * @return string
+     */
+    public function getValField()
+    {
+        return $this->valField;
+    }
+
+    /**
+     * Set portfolio
+     *
+     * @param \PortfolioBundle\Entity\Portfolio $portfolio
+     *
+     * @return PortfolioMeta
+     */
+    public function setPortfolio(\PortfolioBundle\Entity\Portfolio $portfolio = null)
+    {
+        $this->portfolio = $portfolio;
+
+        return $this;
+    }
+
+    /**
+     * Get portfolio
+     *
+     * @return \PortfolioBundle\Entity\Portfolio
+     */
+    public function getPortfolio()
+    {
+        return $this->portfolio;
+    }
+}

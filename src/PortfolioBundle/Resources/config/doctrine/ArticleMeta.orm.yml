@@ -1,0 +1,27 @@
+PortfolioBundle\Entity\ArticleMeta:
+    type: entity
+    table: null
+    repositoryClass: PortfolioBundle\Repository\ArticleMetaRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        keyField:
+            type: string
+            length: '155'
+            column: key_field
+        valField:
+            type: text
+            nullable: true
+            column: val_field
+    manyToOne:
+        article:
+            targetEntity: Article
+            inversedBy: fields
+            joinColumn:
+                name: article_id
+                referencedColumnName: id
+    lifecycleCallbacks: {  }

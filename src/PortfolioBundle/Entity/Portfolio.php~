@@ -1,0 +1,303 @@
+<?php
+
+namespace PortfolioBundle\Entity;
+
+/**
+ * Portfolio
+ */
+class Portfolio
+{
+    /**
+     * @var integer
+     */
+    private $id;
+
+    /**
+     * @var string
+     */
+    private $title;
+
+    /**
+     * @var string
+     */
+    private $description;
+
+    /**
+     * @var integer
+     */
+    private $thumbneil;
+
+    /**
+     * @var string
+     */
+    private $content;
+
+    /**
+     * @var string
+     */
+    private $slug;
+
+    /**
+     * @var \DateTime
+     */
+    private $updatedAt;
+
+    /**
+     * @var \DateTime
+     */
+    private $createdAt;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $fields;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->fields = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set title
+     *
+     * @param string $title
+     *
+     * @return Portfolio
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+
+        return $this;
+    }
+
+    /**
+     * Get title
+     *
+     * @return string
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    /**
+     * Set description
+     *
+     * @param string $description
+     *
+     * @return Portfolio
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * Get description
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * Set thumbneil
+     *
+     * @param integer $thumbneil
+     *
+     * @return Portfolio
+     */
+    public function setThumbneil($thumbneil)
+    {
+        $this->thumbneil = $thumbneil;
+
+        return $this;
+    }
+
+    /**
+     * Get thumbneil
+     *
+     * @return integer
+     */
+    public function getThumbneil()
+    {
+        return $this->thumbneil;
+    }
+
+    /**
+     * Set content
+     *
+     * @param string $content
+     *
+     * @return Portfolio
+     */
+    public function setContent($content)
+    {
+        $this->content = $content;
+
+        return $this;
+    }
+
+    /**
+     * Get content
+     *
+     * @return string
+     */
+    public function getContent()
+    {
+        return $this->content;
+    }
+
+    /**
+     * Set slug
+     *
+     * @param string $slug
+     *
+     * @return Portfolio
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
+
+        return $this;
+    }
+
+    /**
+     * Get slug
+     *
+     * @return string
+     */
+    public function getSlug()
+    {
+        return $this->slug;
+    }
+
+    /**
+     * Set updatedAt
+     *
+     * @param \DateTime $updatedAt
+     *
+     * @return Portfolio
+     */
+    public function setUpdatedAt($updatedAt)
+    {
+        $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    /**
+     * Get updatedAt
+     *
+     * @return \DateTime
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updatedAt;
+    }
+
+    /**
+     * Set createdAt
+     *
+     * @param \DateTime $createdAt
+     *
+     * @return Portfolio
+     */
+    public function setCreatedAt($createdAt)
+    {
+        $this->createdAt = $createdAt;
+
+        return $this;
+    }
+
+    /**
+     * Get createdAt
+     *
+     * @return \DateTime
+     */
+    public function getCreatedAt()
+    {
+        return $this->createdAt;
+    }
+
+    /**
+     * Add field
+     *
+     * @param \PortfolioBundle\Entity\PortfolioMeta $field
+     *
+     * @return Portfolio
+     */
+    public function addField(\PortfolioBundle\Entity\PortfolioMeta $field)
+    {
+        $this->fields[] = $field;
+
+        return $this;
+    }
+
+    /**
+     * Remove field
+     *
+     * @param \PortfolioBundle\Entity\PortfolioMeta $field
+     */
+    public function removeField(\PortfolioBundle\Entity\PortfolioMeta $field)
+    {
+        $this->fields->removeElement($field);
+    }
+
+    /**
+     * Get fields
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getFields()
+    {
+        return $this->fields;
+    }
+    /**
+     * @var \PortfolioBundle\Entity\Media
+     */
+    private $portfolio;
+
+
+    /**
+     * Set portfolio
+     *
+     * @param \PortfolioBundle\Entity\Media $portfolio
+     *
+     * @return Portfolio
+     */
+    public function setPortfolio(\PortfolioBundle\Entity\Media $portfolio = null)
+    {
+        $this->portfolio = $portfolio;
+
+        return $this;
+    }
+
+    /**
+     * Get portfolio
+     *
+     * @return \PortfolioBundle\Entity\Media
+     */
+    public function getPortfolio()
+    {
+        return $this->portfolio;
+    }
+}

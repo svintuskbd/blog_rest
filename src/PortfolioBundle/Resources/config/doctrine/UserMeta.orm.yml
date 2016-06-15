@@ -1,0 +1,32 @@
+PortfolioBundle\Entity\UserMeta:
+    type: entity
+    table: null
+    repositoryClass: PortfolioBundle\Repository\UserMetaRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+        lastname:
+            type: string
+            length: 255
+            nullable: true
+        gender:
+            type: integer
+            nullable: true
+        phone:
+            type: string
+            length: 255
+            nullable: true
+        avatar:
+            type: integer
+            nullable: true
+        birthday:
+            type: datetime
+            nullable: true
+    lifecycleCallbacks: {  }

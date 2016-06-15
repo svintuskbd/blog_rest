@@ -1,0 +1,83 @@
+<?php
+
+namespace PortfolioBundle\Entity;
+
+/**
+ * Rating
+ */
+class Rating
+{
+    /**
+     * @var int
+     */
+    private $id;
+
+    /**
+     * @var string
+     */
+    private $likeVal;
+
+    /**
+     * @var string
+     */
+    private $disLikeVal;
+
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set likeVal
+     *
+     * @param string $likeVal
+     *
+     * @return Rating
+     */
+    public function setLikeVal($likeVal)
+    {
+        $this->likeVal = $likeVal;
+
+        return $this;
+    }
+
+    /**
+     * Get likeVal
+     *
+     * @return string
+     */
+    public function getLikeVal()
+    {
+        return $this->likeVal;
+    }
+
+    /**
+     * Set disLikeVal
+     *
+     * @param string $disLikeVal
+     *
+     * @return Rating
+     */
+    public function setDisLikeVal($disLikeVal)
+    {
+        $this->disLikeVal = $disLikeVal;
+
+        return $this;
+    }
+
+    /**
+     * Get disLikeVal
+     *
+     * @return string
+     */
+    public function getDisLikeVal()
+    {
+        return $this->disLikeVal;
+    }
+}

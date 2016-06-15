@@ -1,0 +1,40 @@
+PortfolioBundle\Entity\User:
+    type: entity
+    table: null
+    repositoryClass: PortfolioBundle\Repository\UserRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        login:
+            type: string
+            length: 255
+        email:
+            type: string
+            length: 255
+        password:
+            type: string
+            length: 255
+        userStatus:
+            type: string
+            length: 255
+            column: user_status
+        role:
+            type: integer
+        createdAt:
+            type: datetime
+            column: created_at
+        updateAt:
+            type: datetime
+            column: update_at
+    oneToOne:
+        user:
+            targetEntity: Media
+            inversedBy: avatar
+            joinColumn:
+                name: media_id
+                referencedColumnName: id
+    lifecycleCallbacks: {  }

@@ -1,0 +1,26 @@
+PortfolioBundle\Entity\PageMeta:
+    type: entity
+    table: null
+    repositoryClass: PortfolioBundle\Repository\PageMetaRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        keyField:
+            type: string
+            length: '155'
+            column: key_field
+        valField:
+            type: text
+            column: val_field
+    manyToOne:
+        page:
+            targetEntity: Page
+            inversedBy: fields
+            joinColumn:
+                name: page_id
+                referencedColumnName: id
+    lifecycleCallbacks: {  }

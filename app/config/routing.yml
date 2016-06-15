@@ -1,0 +1,15 @@
+#app:
+#    resource: "@AppBundle/Controller/"
+#    type:     annotation
+
+acme_api_demos:
+    type: rest
+    resource: PortfolioBundle\Controller\RestArticleController
+
+NelmioApiDocBundle:
+    resource: "@NelmioApiDocBundle/Resources/config/routing.yml"
+    prefix:   /api/doccon
+
+portfolio:
+    resource: "@PortfolioBundle/Resources/config/routing.yml"
+    prefix:   /

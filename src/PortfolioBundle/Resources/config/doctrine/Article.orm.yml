@@ -1,0 +1,53 @@
+PortfolioBundle\Entity\Article:
+    type: entity
+    table: null
+    repositoryClass: PortfolioBundle\Repository\ArticleRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        title:
+            type: string
+            length: '155'
+            nullable: true
+        view:
+            type: integer
+            nullable: true
+        content:
+            type: text
+            nullable: true
+        description:
+            type: string
+            length: '500'
+            nullable: true
+        slug:
+            type: string
+            length: 255
+        updatedAt:
+            type: datetime
+            nullable: true
+            column: updated_at
+        createdAt:
+            type: datetime
+            column: created_at
+    oneToMany:
+        fields:
+            targetEntity: ArticleMeta
+            mappedBy: article
+        comments:
+            targetEntity: Comment
+            mappedBy: article
+        rating:
+            targetEntity: Rating
+            mappedBy: article
+    oneToOne:
+        article:
+            targetEntity: Media
+            inversedBy: thumbneil
+            joinColumn:
+                name: media_id
+                referencedColumnName: id
+    lifecycleCallbacks: {  }

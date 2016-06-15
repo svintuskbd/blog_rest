@@ -1,0 +1,36 @@
+PortfolioBundle\Entity\Category:
+    type: entity
+    table: null
+    repositoryClass: PortfolioBundle\Repository\CategoryRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        title:
+            type: string
+            length: 255
+        updatedAt:
+            type: datetime
+            column: updated_at
+        createdAt:
+            type: datetime
+            column: created_at
+    oneToMany:
+        children:
+            targetEntity: Category
+            mappedBy: parent
+    manyToOne:
+        parent:
+            targetEntity: Category
+            inversedBy: children
+    oneToOne:
+        category:
+            targetEntity: Media
+            inversedBy: thumbneil
+            joinColumn:
+                name: media_id
+                referencedColumnName: id
+    lifecycleCallbacks: {  }

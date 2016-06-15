@@ -1,0 +1,38 @@
+PortfolioBundle\Entity\Page:
+    type: entity
+    table: null
+    repositoryClass: PortfolioBundle\Repository\PageRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        title:
+            type: string
+            length: '155'
+            nullable: true
+        content:
+            type: text
+            nullable: true
+        createdAt:
+            type: datetime
+            nullable: true
+            column: created_at
+        updatedAt:
+            type: datetime
+            nullable: true
+            column: updated_at
+    oneToMany:
+        fields:
+            targetEntity: PageMeta
+            mappedBy: page
+    oneToOne:
+        page:
+            targetEntity: Media
+            inversedBy: thumbneil
+            joinColumn:
+                name: media_id
+                referencedColumnName: id
+    lifecycleCallbacks: {  }

@@ -1,0 +1,35 @@
+PortfolioBundle\Entity\Rating:
+    type: entity
+    table: null
+    repositoryClass: PortfolioBundle\Repository\RatingRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        likeVal:
+            type: string
+            length: '20'
+            nullable: true
+            column: like_val
+        disLikeVal:
+            type: string
+            length: '20'
+            nullable: true
+            column: dis_like_val
+    manyToOne:
+        article:
+            targetEntity: Article
+            inversedBy: rating
+            joinColumn:
+                name: article_id
+                referencedColumnName: id
+        portfolio:
+            targetEntity: Portfolio
+            invercedBy: rating
+            joinColumn:
+                name: portfolio_id
+                referencedColumnName: id
+    lifecycleCallbacks: {  }

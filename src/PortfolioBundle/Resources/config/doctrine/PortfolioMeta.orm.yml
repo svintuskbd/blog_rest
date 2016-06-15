@@ -1,0 +1,27 @@
+PortfolioBundle\Entity\PortfolioMeta:
+    type: entity
+    table: null
+    repositoryClass: PortfolioBundle\Repository\PortfolioMetaRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        keyField:
+            type: string
+            length: '20'
+            column: key_field
+        valField:
+            type: text
+            nullable: true
+            column: val_field
+    manyToOne:
+        portfolio:
+            targetEntity: Portfolio
+            inversedBy: fields
+            joinColumn:
+                name: work_id
+                referencedColumnName: id
+    lifecycleCallbacks: {  }

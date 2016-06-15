@@ -1,0 +1,37 @@
+PortfolioBundle\Entity\Media:
+    type: entity
+    table: null
+    repositoryClass: PortfolioBundle\Repository\MediaRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        url:
+            type: string
+            length: 255
+        type:
+            type: string
+            length: 255
+        createdAt:
+            type: datetime
+            column: created_at
+    oneToOne:
+        thumbneil:
+            targetEntity: Article
+            mappedBy: article
+        thumbneil:
+            targetEntity: Category
+            mappedBy: category
+        thumbneil:
+            targetEntity: Page
+            mappedBy: page
+        thumbneil:
+            targetEntity: Portfolio
+            mappedBy: portfolio
+        avatar:
+            targetEntity: User
+            mappedBy: user
+    lifecycleCallbacks: {  }
